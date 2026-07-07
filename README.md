@@ -1,4 +1,10 @@
-# Project Doctrine
+# Hávamál
+
+> **Your agent forgets why your project judges the way it does — every new session.**
+> Havamal turns hard-won judgment — scars, taste, non-negotiables — into a loadable posture for AI agents.
+> Start with 4 files in 30 minutes.
+
+_Formerly `project-doctrine` (old links redirect). Renamed after the Norse **Hávamál** — the poem of hard-won maxims inside the Edda. A saga records what happened; the Hávamál teaches how to judge. That is exactly the split this repo cares about:_
 
 > **Use handoff when work needs to continue.
 > Use doctrine when judgment needs to continue.**
@@ -36,7 +42,7 @@ That's it. MVD is not "incomplete" — it's **useful**. Everything else is opt-i
 
 ## Why doctrine, not just handoff?
 
-Most AI agent handoffs tell the next agent *what happened*. Project Doctrine teaches the next agent *how to judge*.
+Most AI agent handoffs tell the next agent *what happened*. Havamal teaches the next agent *how to judge*.
 
 A handoff says:
 
@@ -52,7 +58,7 @@ That difference matters.
 
 ## What This Is
 
-Project Doctrine is a method for turning a project's hard-won experience into a reusable posture loader for AI agents.
+Havamal is a method for turning a project's hard-won experience into a reusable posture loader for AI agents.
 
 It captures:
 
@@ -88,7 +94,7 @@ They often fail to answer:
 - What should a future agent refuse to do?
 - How does a new agent prove it understands the project?
 
-Project Doctrine fills that gap.
+Havamal fills that gap.
 
 ---
 
@@ -106,7 +112,7 @@ A school has:
 - language
 - judgment
 
-Project Doctrine makes that school explicit.
+Havamal makes that school explicit.
 
 ---
 
@@ -336,7 +342,7 @@ Different records serve different time scales — and no project needs all of th
 | Decision record | durable decision | what was decided and why |
 | Provenance | doctrine lifetime | where doctrine entries came from |
 
-**Project Doctrine prescribes the promotion path, not the format:**
+**Havamal prescribes the promotion path, not the format:**
 `raw progress → narrative → decision → doctrine`
 
 Use the smallest record that preserves the needed judgment. Don't turn every update into doctrine.
@@ -384,7 +390,7 @@ Full guide (lifecycle, triage template, review cadence, anti-patterns): [`docs/m
 
 ## Usage Modes
 
-Project Doctrine supports three modes. The six-layer structure is the same; what changes is *where the judgment comes from*.
+Havamal supports three modes. The six-layer structure is the same; what changes is *where the judgment comes from*.
 
 ### Solo Mode
 
@@ -432,7 +438,7 @@ Use **none** if:
 
 **Not on day one.**
 
-Create a Project Doctrine after the project has:
+Create a Havamal after the project has:
 
 - a working skeleton
 - a few high-context sessions
@@ -488,7 +494,7 @@ See [`examples/`](examples/):
 >
 > **AI 代理越來越會做事，但它們還是不知道一個專案為什麼這樣判斷。
 > Handoff 保存工作連續性。
-> Project Doctrine 保存判斷連續性。**
+> Havamal 保存判斷連續性。**
 
 ---
 

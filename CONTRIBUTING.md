@@ -1,6 +1,6 @@
-# Contributing to Project Doctrine
+# Contributing to Havamal
 
-Project Doctrine is a methodology repo, not a product. Contributions should strengthen the methodology, not extend it sideways.
+Havamal is a methodology repo, not a product. Contributions should strengthen the methodology, not extend it sideways.
 
 ## What We Want
 

@@ -1,4 +1,10 @@
-# Project Doctrine
+# Hávamál（哈瓦瑪爾）
+
+> **你的 agent 每開一個新 session，就忘記一次「這個專案為什麼這樣判斷」。**
+> Havamal 把專案用代價換來的判斷力——疤痕、品味、不可退讓的底線——變成 agent 可載入的姿勢。
+> 4 個檔案、30 分鐘起步。
+
+_原名 `project-doctrine`（舊連結自動轉跳）。改名取自北歐《埃達》中的〈高人箴言〉（Hávamál）——薩迦記載發生了什麼，箴言教你怎麼判斷。這正是本 repo 關心的那條分界：_
 
 > **工作要接續，用 handoff。
 > 判斷要接續，用 doctrine。**
@@ -36,7 +42,7 @@ Repo 看起來大，但**第一次上手很小**。**Minimum Viable Doctrine（M
 
 ## 為什麼是 doctrine，不只是 handoff？
 
-大部分 AI 代理的 handoff 只告訴下一個代理**發生了什麼**。Project Doctrine 教下一個代理**怎麼判斷**。
+大部分 AI 代理的 handoff 只告訴下一個代理**發生了什麼**。Havamal 教下一個代理**怎麼判斷**。
 
 Handoff 會說：
 
@@ -52,7 +58,7 @@ Doctrine 會說：
 
 ## 這是什麼
 
-Project Doctrine 是一種方法：把專案付過代價的經驗，轉成可重用的**姿態載入器（posture loader）**給 AI 代理。
+Havamal 是一種方法：把專案付過代價的經驗，轉成可重用的**姿態載入器（posture loader）**給 AI 代理。
 
 它保存：
 
@@ -88,7 +94,7 @@ Handoff 有用，但衰退得快。
 - 未來的代理應該**拒絕**做什麼？
 - 新代理怎麼證明自己理解這個專案？
 
-Project Doctrine 補這個缺口。
+Havamal 補這個缺口。
 
 ---
 
@@ -106,7 +112,7 @@ Project Doctrine 補這個缺口。
 - 語言
 - 判斷力
 
-Project Doctrine 把這個派別**明確寫下來**。
+Havamal 把這個派別**明確寫下來**。
 
 ---
 
@@ -340,7 +346,7 @@ Assistant 說「我可以幫你封存」但沒有對應的 state 轉換發生。
 | Decision record | 已決事項 | 決了什麼、為什麼 |
 | Provenance | doctrine 生命週期 | doctrine 條目從哪來 |
 
-**Project Doctrine 規定的是 promotion path，不是格式：**
+**Havamal 規定的是 promotion path，不是格式：**
 `原始進度 → 敘事 → 決策 → doctrine`
 
 **用能保存判斷的最小紀錄形式。** 不要把每個更新都變 doctrine。
@@ -381,7 +387,7 @@ Assistant 說「我可以幫你封存」但沒有對應的 state 轉換發生。
 
 ## 三種使用模式
 
-Project Doctrine 支援三種模式。六層結構一樣；**判斷從哪裡來**不一樣。
+Havamal 支援三種模式。六層結構一樣；**判斷從哪裡來**不一樣。
 
 ### Solo Mode（個人模式）
 
@@ -480,7 +486,7 @@ Project Doctrine 支援三種模式。六層結構一樣；**判斷從哪裡來*
 
 > **AI 代理越來越會做事，但它們還是不知道一個專案為什麼這樣判斷。
 > Handoff 保存工作連續性。
-> Project Doctrine 保存判斷連續性。**
+> Havamal 保存判斷連續性。**
 
 ---
 
