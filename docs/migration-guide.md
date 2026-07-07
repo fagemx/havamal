@@ -1,10 +1,10 @@
 # Migration Guide
 
-How to install Project Doctrine in your project. The short version: copy the template, fill it in for your project, start using it before your next plan.
+How to install Havamal in your project. The short version: copy the template, fill it in for your project, start using it before your next plan.
 
 ## Prerequisites
 
-Project Doctrine is most useful when:
+Havamal is most useful when:
 
 - Your project has been running long enough to have real failures (≥ 1 month of substantive work)
 - Multiple sessions or agents touch the project
@@ -18,13 +18,13 @@ If you're at day 1 of a project, write a README first. Come back here in a month
 ### 1. Copy the template
 
 ```
-cp -r templates/project-doctrine-skill docs/skills/<your-project>-doctrine
+cp -r templates/havamal-skill docs/skills/<your-project>-doctrine
 ```
 
 Or on Windows:
 
 ```
-xcopy /E /I templates\project-doctrine-skill docs\skills\<your-project>-doctrine
+xcopy /E /I templates\havamal-skill docs\skills\<your-project>-doctrine
 ```
 
 You now have the skeleton:

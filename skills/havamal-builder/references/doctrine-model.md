@@ -1,6 +1,6 @@
 # Doctrine Model
 
-The conceptual model behind Project Doctrine. Read this before helping a user build their doctrine.
+The conceptual model behind Havamal. Read this before helping a user build their doctrine.
 
 ## Four artifacts, four questions
 

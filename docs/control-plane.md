@@ -4,7 +4,7 @@
 > agent must answer "where are we?" in one command, or when more than one
 > agent needs to read the same campaign state.
 
-Project Doctrine starts with markdown execution state. That is enough for many
+Havamal starts with markdown execution state. That is enough for many
 projects. Some projects outgrow it.
 
 ```text

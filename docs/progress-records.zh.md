@@ -3,7 +3,7 @@
 > **Doctrine 固定的是判斷怎麼被提煉。
 > 進度紀錄是彈性的。**
 
-採用 Project Doctrine 常見的疑問：「我是不是 state-snapshot、narrative log、decision record、provenance 全都要有？」
+採用 Havamal 常見的疑問：「我是不是 state-snapshot、narrative log、decision record、provenance 全都要有？」
 
 **不用。** 你只要**能保存你想帶進未來的判斷的最小紀錄集合**就好。這份文件盤一下各種紀錄形式、各自的用途，以及它們怎麼餵 doctrine。
 
@@ -288,7 +288,7 @@ State-snapshot 夠就不要寫 narrative log。Handoff 夠就不要寫 decision 
 
 ---
 
-## Project Doctrine 規定什麼 / 不規定什麼
+## Havamal 規定什麼 / 不規定什麼
 
 **規定：**
 
@@ -342,10 +342,10 @@ evidence-log.md（選配）
 
 ## 最短版
 
-> **Project Doctrine 不規定進度一定怎麼記。
+> **Havamal 不規定進度一定怎麼記。
 > 它規定的是：原始進度如何被提煉成判斷。**
 >
-> Project Doctrine does not prescribe one progress-log format.
+> Havamal does not prescribe one progress-log format.
 > It prescribes a promotion path: raw progress → narrative → decision → doctrine.
 
 這個差異就是整件事的重點。

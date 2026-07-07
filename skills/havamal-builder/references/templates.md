@@ -1,8 +1,8 @@
 # Templates
 
-Copy-paste templates for every file in a Project Doctrine skill. Use these when helping a user scaffold their doctrine. Each template is the minimum viable v0 content — fill in the bracketed fields with project-specific content.
+Copy-paste templates for every file in a Havamal skill. Use these when helping a user scaffold their doctrine. Each template is the minimum viable v0 content — fill in the bracketed fields with project-specific content.
 
-For the canonical templates that ship with this repo, see [`templates/project-doctrine-skill/`](../../../templates/project-doctrine-skill/). This file is a condensed quick-reference.
+For the canonical templates that ship with this repo, see [`templates/havamal-skill/`](../../../templates/havamal-skill/). This file is a condensed quick-reference.
 
 ---
 

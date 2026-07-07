@@ -1,0 +1,32 @@
+{
+  "name": "havamal",
+  "version": "0.1.0",
+  "description": "Judgment continuity for AI agents — what CLAUDE.md forgets. Doctrine-debt lint + hot-pack generator for project doctrine.",
+  "type": "module",
+  "bin": {
+    "havamal": "./bin/havamal.mjs"
+  },
+  "files": [
+    "bin",
+    "templates",
+    "docs",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fagemx/havamal.git"
+  },
+  "keywords": [
+    "ai-agents",
+    "claude-code",
+    "agent-memory",
+    "context-engineering",
+    "doctrine"
+  ],
+  "license": "MIT"
+}

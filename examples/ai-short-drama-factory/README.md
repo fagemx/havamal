@@ -1,6 +1,6 @@
 # Example — AI Short-Drama Factory
 
-**Status: outline.** A placeholder showing how Project Doctrine applies to an AI-content pipeline (short-form video generation: script → storyboard → voice → video → edit).
+**Status: outline.** A placeholder showing how Havamal applies to an AI-content pipeline (short-form video generation: script → storyboard → voice → video → edit).
 
 ## Why this is different from a typical software project
 

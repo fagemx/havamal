@@ -1,6 +1,6 @@
 # Install
 
-Project Doctrine is markdown + templates. No binary, no package manager, no CLI. Installing it means **copying the right directory into your own project's right location, and pointing your agent runtime at it.**
+Havamal is markdown + templates. No binary, no package manager, no CLI. Installing it means **copying the right directory into your own project's right location, and pointing your agent runtime at it.**
 
 This doc covers the three things you might want to install, and how to place them for each common agent runtime (Claude Code, Codex, Gemini CLI, Cursor, or nothing at all).
 
@@ -11,8 +11,8 @@ This doc covers the three things you might want to install, and how to place the
 | What you want | How |
 |---|---|
 | **Read the methodology** | `git clone` the repo, or just browse on GitHub. No install. |
-| **Build doctrine for your project** | Copy [`templates/project-doctrine-skill/`](../templates/project-doctrine-skill/) into your project. |
-| **Give your agent the "doctrine-builder" skill** | Copy [`skills/project-doctrine-builder/`](../skills/project-doctrine-builder/) into your runtime's skill directory. |
+| **Build doctrine for your project** | Copy [`templates/havamal-skill/`](../templates/havamal-skill/) into your project. |
+| **Give your agent the "doctrine-builder" skill** | Copy [`skills/havamal-builder/`](../skills/havamal-builder/) into your runtime's skill directory. |
 | **Use Archaeology Mode on someone else's project** | Copy the three [`templates/archaeology-report.md`](../templates/archaeology-report.md), [`contribution-strategy.md`](../templates/contribution-strategy.md), [`review-risk-map.md`](../templates/review-risk-map.md) as per-analysis output files. |
 
 No install step is more than a `git clone` + `cp -r`.
@@ -21,7 +21,7 @@ No install step is more than a `git clone` + `cp -r`.
 
 ## Three things you might want to install
 
-Project Doctrine contains three artifacts. You pick what to install based on what you're doing.
+Havamal contains three artifacts. You pick what to install based on what you're doing.
 
 ### 1. The methodology docs
 
@@ -35,17 +35,17 @@ git clone https://github.com/fagemx/project-doctrine
 
 Or just browse on GitHub. No further action needed.
 
-### 2. The project-doctrine-skill template
+### 2. The havamal-skill template
 
-Directory: `templates/project-doctrine-skill/` — the 14-file skeleton (SKILL.md + 13 references + governance/decision-records for team mode).
+Directory: `templates/havamal-skill/` — the 14-file skeleton (SKILL.md + 13 references + governance/decision-records for team mode).
 
 **Install by:** copying into your project. See [Placing the template](#placing-the-template-in-your-project) below.
 
 This is the common case. If your project has enough scars to build a doctrine (see [`when-to-use.md`](when-to-use.md)), this is what you copy.
 
-### 3. The project-doctrine-builder skill
+### 3. The havamal-builder skill
 
-Directory: `skills/project-doctrine-builder/` — the meta-skill that teaches agents how to help users build doctrines.
+Directory: `skills/havamal-builder/` — the meta-skill that teaches agents how to help users build doctrines.
 
 **Install by:** copying into your agent runtime's skill directory. See [Installing the builder skill](#installing-the-builder-skill) below.
 
@@ -59,13 +59,13 @@ Copy the template, rename for your project, and point your agent runtime at it.
 
 ```bash
 # from inside your project's repo root
-cp -r <path-to-project-doctrine>/templates/project-doctrine-skill ./docs/skills/<your-project>-doctrine
+cp -r <path-to-project-doctrine>/templates/havamal-skill ./docs/skills/<your-project>-doctrine
 ```
 
 On Windows:
 
 ```powershell
-xcopy /E /I <path-to-project-doctrine>\templates\project-doctrine-skill docs\skills\<your-project>-doctrine
+xcopy /E /I <path-to-project-doctrine>\templates\havamal-skill docs\skills\<your-project>-doctrine
 ```
 
 Then fill in the template files per [`migration-guide.md`](migration-guide.md).
@@ -98,9 +98,9 @@ After copying the template, tell your runtime's config file (CLAUDE.md / AGENTS.
 **Example — CLAUDE.md snippet:**
 
 ```markdown
-## Project Doctrine
+## Havamal
 
-This project uses a Project Doctrine at `docs/skills/<project>-doctrine/SKILL.md`.
+This project uses a Havamal at `docs/skills/<project>-doctrine/SKILL.md`.
 
 **Before any non-trivial work, read the doctrine load protocol:**
 
@@ -141,28 +141,28 @@ ln -s ../../docs/skills/<project>-doctrine .claude/skills/<project>-doctrine
 
 ## Installing the builder skill
 
-The **project-doctrine-builder** skill teaches an agent how to help users build doctrines. Install it if you want agents that can walk users through the bootstrap process.
+The **havamal-builder** skill teaches an agent how to help users build doctrines. Install it if you want agents that can walk users through the bootstrap process.
 
 ```bash
 # for Claude Code user-level (available across all your projects)
-cp -r <path-to-project-doctrine>/skills/project-doctrine-builder ~/.claude/skills/
+cp -r <path-to-project-doctrine>/skills/havamal-builder ~/.claude/skills/
 
 # for Claude Code project-level
-cp -r <path-to-project-doctrine>/skills/project-doctrine-builder ./.claude/skills/
+cp -r <path-to-project-doctrine>/skills/havamal-builder ./.claude/skills/
 
 # for Codex
-cp -r <path-to-project-doctrine>/skills/project-doctrine-builder ./.codex/skills/
+cp -r <path-to-project-doctrine>/skills/havamal-builder ./.codex/skills/
 ```
 
 (Exact paths depend on your CLI version; check its skills-directory convention.)
 
-**If your runtime doesn't have a skills directory:** put it at `docs/skills/project-doctrine-builder/` and reference from your runtime's config:
+**If your runtime doesn't have a skills directory:** put it at `docs/skills/havamal-builder/` and reference from your runtime's config:
 
 ```markdown
-## Project Doctrine Builder
+## Havamal Builder
 
-If the user asks to build, review, or maintain a Project Doctrine, load:
-`docs/skills/project-doctrine-builder/SKILL.md`
+If the user asks to build, review, or maintain a Havamal, load:
+`docs/skills/havamal-builder/SKILL.md`
 ```
 
 This works for any agent that reads its config file and follows instructions there.
@@ -215,7 +215,7 @@ The templates live in the project-doctrine repo. You can keep reusing them per p
 
 - Pick the runtime's equivalent of "the instructions file."
 - Paste the doctrine load-protocol snippet.
-- The agent doesn't need to "understand" Project Doctrine specifically — it just needs to follow the instruction to read a specific set of markdown files before non-trivial work.
+- The agent doesn't need to "understand" Havamal specifically — it just needs to follow the instruction to read a specific set of markdown files before non-trivial work.
 
 ---
 
@@ -253,7 +253,7 @@ Delete the relevant directory. The doctrine is plain markdown — removal is a `
 ### Install a doctrine into a project
 
 ```bash
-cp -r templates/project-doctrine-skill your-repo/docs/skills/<your-project>-doctrine
+cp -r templates/havamal-skill your-repo/docs/skills/<your-project>-doctrine
 ```
 
 Then reference from CLAUDE.md / AGENTS.md / GEMINI.md / `.cursor/rules/`.
@@ -261,7 +261,7 @@ Then reference from CLAUDE.md / AGENTS.md / GEMINI.md / `.cursor/rules/`.
 ### Install the builder skill for your agent
 
 ```bash
-cp -r skills/project-doctrine-builder ~/.claude/skills/
+cp -r skills/havamal-builder ~/.claude/skills/
 # or your runtime's equivalent skills directory
 ```
 

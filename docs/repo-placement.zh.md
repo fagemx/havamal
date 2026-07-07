@@ -1,6 +1,6 @@
 # Repo 放置與隱私邊界
 
-> **Project Doctrine 是專案資產。跟專案一起 version-control。
+> **Havamal 是專案資產。跟專案一起 version-control。
 > 但不是所有想法都該進 main。**
 
 Doctrine 該放哪？該進 repo 嗎？什麼進 `main`、什麼留分支、什麼根本不該 commit？這份文件回答這些。
@@ -356,7 +356,7 @@ docs/project-doctrine/               # 公開安全、放 main
 
 ## 統攝原則
 
-> **Project Doctrine 是專案資產。跟專案一起 version-control。
+> **Havamal 是專案資產。跟專案一起 version-control。
 > 但不是所有想法都該進 main，也不是所有想法都該公開。**
 
 三層（main / branches / 外面）、一條倫理規則（分析決策、不分析人格）、一個測試：「這會幫未來代理、還是誤導他們？」

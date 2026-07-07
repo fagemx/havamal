@@ -8,7 +8,7 @@ A capable agent will execute a bad plan crisply. It will implement a feature tha
 
 None of that is a skill gap. It's a judgment gap.
 
-The gap closes when a project's **school** — its accumulated taste, its refused paths, its hard-won failures — is extractable and reloadable. Project Doctrine is a format for that extraction.
+The gap closes when a project's **school** — its accumulated taste, its refused paths, its hard-won failures — is extractable and reloadable. Havamal is a format for that extraction.
 
 ## What a project school contains
 
@@ -56,7 +56,7 @@ A school of thought (in art, medicine, science) isn't just a set of facts. It's 
 
 Software projects that last long enough develop schools too. The team may not notice, because the school is the water they swim in. It becomes visible when a new engineer — or a new agent — joins and makes moves that are technically reasonable but *feel wrong* inside the school.
 
-Project Doctrine is a way to make the school explicit without killing it. Explicit enough that a new agent can enter it. Soft enough that it stays alive and grows.
+Havamal is a way to make the school explicit without killing it. Explicit enough that a new agent can enter it. Soft enough that it stays alive and grows.
 
 ## Not a substitute for thinking
 

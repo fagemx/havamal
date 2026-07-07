@@ -5,7 +5,7 @@
 > Too early, doctrine becomes aspiration.
 > Too late, doctrine becomes archaeology.
 
-Project Doctrine is best created after the project has a skeleton and a few high-context sessions — but before the context spreads across too many stale plans, half-remembered decisions, and scattered chat logs.
+Havamal is best created after the project has a skeleton and a few high-context sessions — but before the context spreads across too many stale plans, half-remembered decisions, and scattered chat logs.
 
 That window is where the raw material is richest and still compressible.
 
@@ -296,7 +296,7 @@ Budget 2–3x the time a fresh-stage doctrine would take.
 
 ## How agents should evaluate readiness
 
-When a user asks "should we build a Project Doctrine for this?" the agent should:
+When a user asks "should we build a Havamal for this?" the agent should:
 
 1. Run the readiness rubric honestly (not optimistically)
 2. Report the score

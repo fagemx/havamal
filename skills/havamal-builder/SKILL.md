@@ -1,13 +1,13 @@
 ---
-name: project-doctrine-builder
-description: Teaches you how to build a Project Doctrine skill for a given project. Use when a project has accumulated enough judgment that handoffs are no longer sufficient and a 6-layer doctrine is the right response.
+name: havamal-builder
+description: Teaches you how to build a Havamal skill for a given project. Use when a project has accumulated enough judgment that handoffs are no longer sufficient and a 6-layer doctrine is the right response.
 ---
 
-# Project Doctrine Builder
+# Havamal Builder
 
-This skill teaches how to build a Project Doctrine skill for your project. It is a **meta-skill**: it doesn't load a specific project's posture — it guides you through creating one.
+This skill teaches how to build a Havamal skill for your project. It is a **meta-skill**: it doesn't load a specific project's posture — it guides you through creating one.
 
-**Announce at start:** "I'm using the project-doctrine-builder skill to design the doctrine for <project>."
+**Announce at start:** "I'm using the havamal-builder skill to design the doctrine for <project>."
 
 ## When to use
 
@@ -173,7 +173,7 @@ If the user wants the comprehensive version beyond minimum viable:
 
 When the user asks you to apply this skill:
 
-1. Announce ("I'm using the project-doctrine-builder skill...")
+1. Announce ("I'm using the havamal-builder skill...")
 2. Confirm the project is ready (3 yes/no questions from `docs/getting-started.md`)
 3. Identify mode (one question: "who edits the doctrine?")
 4. Default to the **minimum viable 4-file path**. Walk through Step 1–5 of `docs/getting-started.md`, not the full bootstrap.

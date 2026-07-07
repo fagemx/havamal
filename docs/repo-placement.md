@@ -1,6 +1,6 @@
 # Repo Placement & Privacy
 
-> **Project Doctrine is a project asset. Version-control it.
+> **Havamal is a project asset. Version-control it.
 > But not every thought belongs in main.**
 
 Where should doctrine live? Should it be in the repo? What goes in `main` vs a branch? What should never be committed at all? This doc answers those.
@@ -356,7 +356,7 @@ If all five pass: commit to main.
 
 ## Governing principle
 
-> **Project Doctrine is a project asset. Version-control it with the project.
+> **Havamal is a project asset. Version-control it with the project.
 > But not every thought belongs in main, and not every thought belongs in public.**
 
 Three layers (main / branches / outside), one ethical rule (analyze decisions, not personalities), and one test: "would this help future agents, or mislead them?"

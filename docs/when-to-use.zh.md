@@ -1,11 +1,11 @@
-# 什麼時候該建立 Project Doctrine（When to Use）
+# 什麼時候該建立 Havamal（When to Use）
 
 > **有骨架之後，脈絡散掉之前。**
 >
 > 太早，doctrine 只是願景。
 > 太晚，doctrine 變成考古。
 
-Project Doctrine 最適合在專案有骨架、有幾次高脈絡長 session 之後建立——但要在脈絡散進太多舊 plan、半記得的決策、散落的對話紀錄之前。
+Havamal 最適合在專案有骨架、有幾次高脈絡長 session 之後建立——但要在脈絡散進太多舊 plan、半記得的決策、散落的對話紀錄之前。
 
 那個中間窗口，是原料最豐富、又還壓得下來的時刻。
 
@@ -296,7 +296,7 @@ Sprawl 已經發生。不要直接寫 layers，先考古：
 
 ## 代理怎麼判斷該不該建 doctrine
 
-當使用者問「這個專案要不要做 Project Doctrine？」時，代理應該：
+當使用者問「這個專案要不要做 Havamal？」時，代理應該：
 
 1. **誠實**跑一次 readiness rubric（不要樂觀解讀）
 2. 回報分數

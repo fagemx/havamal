@@ -271,7 +271,7 @@ See [`docs/apprenticeship-protocol.md`](docs/apprenticeship-protocol.md).
 
 ## Quick Start
 
-1. Copy `templates/project-doctrine-skill/` into your project (see paths per runtime below).
+1. Copy `templates/havamal-skill/` into your project (see paths per runtime below).
 2. Fill in `state-snapshot.md`.
 3. Write L1, L5, and L6 first.
 4. Add at least 3 failure memory entries.
@@ -281,7 +281,7 @@ See [`docs/apprenticeship-protocol.md`](docs/apprenticeship-protocol.md).
 
 ### Installation paths
 
-No CLI, no package manager — just `git clone` and `cp -r`. The directory you copy to depends on your agent runtime:
+Just `git clone` and `cp -r` — plus an optional zero-dependency CLI (see **Machine face** below). The directory you copy to depends on your agent runtime:
 
 | Runtime | Path |
 |---|---|
@@ -293,6 +293,20 @@ No CLI, no package manager — just `git clone` and `cp -r`. The directory you c
 Full install guide (all runtimes, builder skill, archaeology templates, updates, uninstall): [`docs/install.md`](docs/install.md) / 中文：[`docs/install.zh.md`](docs/install.zh.md)
 
 Step-by-step for filling the template: [`docs/migration-guide.md`](docs/migration-guide.md)
+
+## Machine face
+
+Doctrine that relies on being remembered decays — its own authors forget it. Two commands (zero dependencies, Node 18+) make it load-bearing:
+
+```bash
+node bin/havamal.mjs check docs/skills/<project>-doctrine   # doctrine-debt lint: MVD present, no template filler, scars have origins
+node bin/havamal.mjs pack  docs/skills/<project>-doctrine --out .havamal-pack.md   # compressed hot pack for session-start injection
+```
+
+- **`check`** exits non-zero when MVD files are missing or filled with placeholder text — wire it into CI so doctrine debt blocks merges instead of accumulating.
+- **`pack`** exists because working agents consume compressed context, not full prose. Generate the pack, reference *it* from `CLAUDE.md` / `AGENTS.md`, and keep the full doctrine as cold storage for deep dives and disputes.
+
+Try both against the flagship example: `node bin/havamal.mjs check examples/wushantou-foundry/references`
 
 ## Everyday Use
 
@@ -461,6 +475,7 @@ Full guide + readiness rubric + three creation modes (lightweight / full / recov
 
 See [`examples/`](examples/):
 
+- [`wushantou-foundry/`](examples/wushantou-foundry/) — **flagship: a real doctrine from a real public project**, every scar with provenance (start here)
 - [`software-project/`](examples/software-project/) — a fully-fleshed skeleton for a typical software product
 - [`trading-agent/`](examples/trading-agent/) — outline for a quant / trading-agent project
 - [`ai-short-drama-factory/`](examples/ai-short-drama-factory/) — outline for an AI-content pipeline

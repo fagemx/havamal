@@ -1,4 +1,4 @@
-# Maintaining Project Doctrine
+# Maintaining Havamal
 
 > **Git stores history. Doctrine stores usable judgment.**
 >
@@ -390,7 +390,7 @@ Don't ask every time. Ask at the *right* time — see the triggers above.
 For candidates that aren't obviously one action, use a triage record. See:
 
 - [`templates/doctrine-triage.md`](../templates/doctrine-triage.md) — copy-paste per-candidate template
-- [`templates/project-doctrine-skill/references/incubation.md`](../templates/project-doctrine-skill/references/incubation.md) — ongoing candidates file
+- [`templates/havamal-skill/references/incubation.md`](../templates/havamal-skill/references/incubation.md) — ongoing candidates file
 
 ---
 

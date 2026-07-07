@@ -25,7 +25,7 @@ That's it. The agent reads the load-protocol files, re-enters the project's stan
 
 ## How developers actually use it
 
-You don't wake up thinking "I should use Project Doctrine today." You wake up and say one of these to your agent:
+You don't wake up thinking "I should use Havamal today." You wake up and say one of these to your agent:
 
 - "Pick up where we left off."
 - "Take a look at this project."
@@ -165,9 +165,9 @@ And carefully triage: still valid / needs revision / superseded. A pivot doesn't
 ### 9. Porting the method to a new project
 
 **Developer says:**
-- "Use the project-doctrine-builder to set this up for my trading agent."
+- "Use the havamal-builder to set this up for my trading agent."
 
-**Agent does:** NOT transplant any other project's doctrine. Use the `skills/project-doctrine-builder/` skill to:
+**Agent does:** NOT transplant any other project's doctrine. Use the `skills/havamal-builder/` skill to:
 - Ask about the new project's domain core
 - Identify its worst-case wrong version
 - Gather existing failure memory

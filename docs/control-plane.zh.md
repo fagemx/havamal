@@ -3,7 +3,7 @@
 > 當 `execution-state.md` 不再夠用時才加 —— 例如外部 agent 必須用一個命令回答「我們現在在哪？」，
 > 或必須讓多於一個 agent 讀同一份 campaign 狀態。
 
-Project Doctrine 預設用 markdown 的執行狀態（execution state）。對許多專案來說這已經夠了。
+Havamal 預設用 markdown 的執行狀態（execution state）。對許多專案來說這已經夠了。
 有些專案會長出超出 markdown 容量的需求。
 
 ```text

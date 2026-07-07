@@ -1,6 +1,6 @@
 # Example — Software Project
 
-A worked example of Project Doctrine for a **generic B2B SaaS app with AI-assisted features**. Voice is deliberately neutral so readers can see the shape without product noise.
+A worked example of Havamal for a **generic B2B SaaS app with AI-assisted features**. Voice is deliberately neutral so readers can see the shape without product noise.
 
 ## The scenario
 

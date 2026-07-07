@@ -362,7 +362,7 @@ The product positioning line:
 
 ---
 
-## Why this belongs in Project Doctrine
+## Why this belongs in Havamal
 
 Solo Mode and Team Mode are about *preserving* judgment inside a project. Archaeology Mode is about *inferring* judgment that was already paid for but never written down.
 
@@ -372,7 +372,7 @@ Together they are the three pillars:
 2. **Team Mode** — make team judgment explicit and reviewable
 3. **Archaeology Mode** — infer project judgment from existing code, PRs, issues, and reviews
 
-With all three, Project Doctrine isn't just "my personal agent-memory tool." It's a general methodology for **AI agents entering unfamiliar projects.**
+With all three, Havamal isn't just "my personal agent-memory tool." It's a general methodology for **AI agents entering unfamiliar projects.**
 
 ---
 

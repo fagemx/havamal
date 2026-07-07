@@ -54,13 +54,13 @@ This guide assumes Solo or Team Mode. Team Mode adds 2 extra files at Step 3; ot
 ## Step 2 — Copy the template (1 min)
 
 ```bash
-cp -r <path-to-project-doctrine>/templates/project-doctrine-skill ./docs/skills/<your-project>-doctrine
+cp -r <path-to-project-doctrine>/templates/havamal-skill ./docs/skills/<your-project>-doctrine
 ```
 
 Windows:
 
 ```powershell
-xcopy /E /I <path-to-project-doctrine>\templates\project-doctrine-skill docs\skills\<your-project>-doctrine
+xcopy /E /I <path-to-project-doctrine>\templates\havamal-skill docs\skills\<your-project>-doctrine
 ```
 
 Don't worry about the full file list. You'll fill in four files now and leave the rest alone.
@@ -118,9 +118,9 @@ Open `references/bootstrap-prompt.md`. Replace `<project>` with your project nam
 Open your runtime's config file (CLAUDE.md / AGENTS.md / GEMINI.md / `.cursor/rules/*`). Add:
 
 ```markdown
-## Project Doctrine
+## Havamal
 
-This project has a Project Doctrine at `docs/skills/<your-project>-doctrine/SKILL.md`.
+This project has a Havamal at `docs/skills/<your-project>-doctrine/SKILL.md`.
 
 **Before any non-trivial work**, read the load protocol:
 1. `docs/skills/<your-project>-doctrine/references/state-snapshot.md`

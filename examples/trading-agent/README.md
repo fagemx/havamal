@@ -1,6 +1,6 @@
 # Example — Trading Agent
 
-**Status: outline.** A placeholder showing how Project Doctrine applies to a quant / trading-agent project. Contributions welcome.
+**Status: outline.** A placeholder showing how Havamal applies to a quant / trading-agent project. Contributions welcome.
 
 ## Why this is different from a typical software project
 

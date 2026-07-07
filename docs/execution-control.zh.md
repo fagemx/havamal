@@ -2,7 +2,7 @@
 
 > 當專案一直用很多小 package 推進，使用者已經看不出大方向時，用這套。
 
-Project Doctrine 已經區分 doctrine 和 handoff。Execution control 補的是長任務代理工作中間缺的那層：
+Havamal 已經區分 doctrine 和 handoff。Execution control 補的是長任務代理工作中間缺的那層：
 
 ```text
 state-snapshot = 專案現在在哪
@@ -26,7 +26,7 @@ Copy-Item "<project-doctrine-路徑>\templates\execution-state.md" `
 如果專案使用 doctrine skill，則使用：
 
 ```text
-templates/project-doctrine-skill/references/execution-state.md
+templates/havamal-skill/references/execution-state.md
 ```
 
 2. 第一次只填這幾塊：
@@ -71,7 +71,7 @@ templates/project-doctrine-skill/references/execution-state.md
 
 ## 三個組件
 
-Execution control 是 Project Doctrine 自己的方法，由三個組件構成。
+Execution control 是 Havamal 自己的方法，由三個組件構成。
 
 ### 1. Loop control
 
@@ -87,7 +87,7 @@ Loop discipline：
 停或繼續
 ```
 
-放到 Project Doctrine 裡：
+放到 Havamal 裡：
 
 - **loop** 變成「working rule for future agents」；
 - **backlog** 變成「next queue」；
@@ -106,7 +106,7 @@ session log
 不靠聊天記憶也能恢復
 ```
 
-放到 Project Doctrine 裡：
+放到 Havamal 裡：
 
 - 文件必須寫明 current focus；
 - 必須寫明 last completed package；
@@ -125,7 +125,7 @@ reviewer challenge
 不要什麼都建
 ```
 
-放到 Project Doctrine 裡：
+放到 Havamal 裡：
 
 - 每個 queue item 都要有 `Done When`；
 - 文件要寫明暫時不要建什麼；

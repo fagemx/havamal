@@ -3,7 +3,7 @@
 > Use this when a project is moving through many small packages and the operator
 > can no longer tell where the larger campaign is.
 
-Project Doctrine already distinguishes doctrine from handoff. Execution control
+Havamal already distinguishes doctrine from handoff. Execution control
 is the missing middle layer for long-running agent work:
 
 ```text
@@ -29,7 +29,7 @@ Copy-Item "<path-to-project-doctrine>\templates\execution-state.md" `
 Or, if the project uses a doctrine skill, copy/use:
 
 ```text
-templates/project-doctrine-skill/references/execution-state.md
+templates/havamal-skill/references/execution-state.md
 ```
 
 2. Fill only these fields first:
@@ -76,7 +76,7 @@ are enough.
 
 ## The three parts
 
-Execution control is a Project Doctrine method with three parts.
+Execution control is a Havamal method with three parts.
 
 ### 1. Loop control
 
@@ -92,7 +92,7 @@ record friction
 stop or continue
 ```
 
-In Project Doctrine:
+In Havamal:
 
 - **loop** becomes "working rule for future agents";
 - **backlog** becomes "next queue";
@@ -111,7 +111,7 @@ session log
 resume without chat memory
 ```
 
-In Project Doctrine:
+In Havamal:
 
 - the file must name the current focus;
 - it must name the last completed package;
@@ -130,7 +130,7 @@ reviewer challenge
 do not build every possible thing
 ```
 
-In Project Doctrine:
+In Havamal:
 
 - every queue item needs a `Done When`;
 - the file should name what not to build yet;

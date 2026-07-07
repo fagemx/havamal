@@ -1,6 +1,6 @@
 # Example — Research Agent
 
-**Status: outline.** A placeholder showing how Project Doctrine applies to a long-running research agent (e.g., an agent that tracks a scientific literature, monitors a market, or synthesizes evidence on an evolving topic).
+**Status: outline.** A placeholder showing how Havamal applies to a long-running research agent (e.g., an agent that tracks a scientific literature, monitors a market, or synthesizes evidence on an evolving topic).
 
 ## Why this is different from a typical software project
 

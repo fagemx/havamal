@@ -54,13 +54,13 @@
 ## Step 2 — 複製模板（1 分鐘）
 
 ```bash
-cp -r <project-doctrine-路徑>/templates/project-doctrine-skill ./docs/skills/<your-project>-doctrine
+cp -r <project-doctrine-路徑>/templates/havamal-skill ./docs/skills/<your-project>-doctrine
 ```
 
 Windows：
 
 ```powershell
-xcopy /E /I <project-doctrine-path>\templates\project-doctrine-skill docs\skills\<your-project>-doctrine
+xcopy /E /I <project-doctrine-path>\templates\havamal-skill docs\skills\<your-project>-doctrine
 ```
 
 **不要擔心全部的檔案清單。** 你等下只填 4 個，其他原封不動。
@@ -118,9 +118,9 @@ xcopy /E /I <project-doctrine-path>\templates\project-doctrine-skill docs\skills
 開你 runtime 的 config 檔（CLAUDE.md / AGENTS.md / GEMINI.md / `.cursor/rules/*`）。加：
 
 ```markdown
-## Project Doctrine
+## Havamal
 
-這個專案有 Project Doctrine，位置 `docs/skills/<your-project>-doctrine/SKILL.md`。
+這個專案有 Havamal，位置 `docs/skills/<your-project>-doctrine/SKILL.md`。
 
 **任何非瑣事的工作前**，依 load protocol 讀：
 1. `docs/skills/<your-project>-doctrine/references/state-snapshot.md`

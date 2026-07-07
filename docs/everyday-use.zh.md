@@ -25,7 +25,7 @@
 
 ## 開發者平常怎麼用
 
-你不會某天早上想「我今天要用 Project Doctrine」。你早上會對你的代理說：
+你不會某天早上想「我今天要用 Havamal」。你早上會對你的代理說：
 
 - 「接著做。」
 - 「你先看一下這個專案。」
@@ -165,9 +165,9 @@
 ### 9. 把方法移植到新專案
 
 **開發者講：**
-- 「用 project-doctrine-builder 幫我的 trading agent 建一套。」
+- 「用 havamal-builder 幫我的 trading agent 建一套。」
 
-**代理做：** **不要**搬移任何其他專案的 doctrine。用 `skills/project-doctrine-builder/` 這個 skill：
+**代理做：** **不要**搬移任何其他專案的 doctrine。用 `skills/havamal-builder/` 這個 skill：
 - 問這個新專案的 domain core 是什麼
 - 找出它最怕變成的錯版本
 - 蒐集既有 failure memory

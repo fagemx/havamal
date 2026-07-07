@@ -271,7 +271,7 @@ Assistant 說「我可以幫你封存」但沒有對應的 state 轉換發生。
 
 ## 快速開始
 
-1. 把 `templates/project-doctrine-skill/` 複製到你的專案（依 runtime 看放哪）
+1. 把 `templates/havamal-skill/` 複製到你的專案（依 runtime 看放哪）
 2. 先填 `state-snapshot.md`
 3. 先寫 L1、L5、L6
 4. 至少加 3 條 failure memory

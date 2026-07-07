@@ -3,7 +3,7 @@
 > **Doctrine fixes how judgment is distilled.
 > Progress recording is flexible.**
 
-A common confusion when adopting Project Doctrine: "do I need a state-snapshot AND a narrative log AND a decision record AND a provenance file?"
+A common confusion when adopting Havamal: "do I need a state-snapshot AND a narrative log AND a decision record AND a provenance file?"
 
 No. You need the smallest set of records that preserves the judgment you want to carry forward. This doc maps out the record types, what each one is for, and how they feed the doctrine.
 
@@ -292,16 +292,16 @@ If state-snapshot is enough, don't write a narrative log. If a handoff is enough
 
 ---
 
-## What Project Doctrine prescribes vs leaves open
+## What Havamal prescribes vs leaves open
 
-**Project Doctrine prescribes:**
+**Havamal prescribes:**
 
 - The six-layer structure (L1–L6)
 - The promotion path (narrative → candidate → doctrine → provenance)
 - The ethical boundary in Archaeology Mode
 - The maintenance discipline (Keep / Promote / Archive / Delete)
 
-**Project Doctrine leaves open:**
+**Havamal leaves open:**
 
 - Whether you keep a narrative log at all
 - Whether you use decision records
@@ -346,10 +346,10 @@ evidence-log.md  (optional)
 
 ## The short version
 
-> **Project Doctrine does not prescribe one progress-log format.
+> **Havamal does not prescribe one progress-log format.
 > It prescribes a promotion path: raw progress → narrative → decision → doctrine.**
 >
-> **Project Doctrine 不規定進度一定怎麼記。
+> **Havamal 不規定進度一定怎麼記。
 > 它規定的是：原始進度如何被提煉成判斷。**
 
 That distinction is the whole point.

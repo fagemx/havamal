@@ -6,7 +6,7 @@ Restoration note: 本檔於 2026-07-06 前後被另一 session 在無 supersessi
 roles/ 結構提案），2026-07-06 由原作者 session 依記憶原文恢復。若
 roles/ 提案被操作員接受，本檔的角色卡部分可遷移；遷移須留轉址。
 晉升條件：此方法在兩個不同性質的真實案例中存活後，用
-`project-doctrine-builder` 收割成正式 skill。方法自己也要過驗收。
+`havamal-builder` 收割成正式 skill。方法自己也要過驗收。
 
 ## 一句話
 
