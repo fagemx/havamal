@@ -1,3 +1,6 @@
+> **ARCHIVED (2026-07-08) — superseded by [edda](https://github.com/fagemx/edda).**
+> This document taught hand-maintained execution state / control planes in markdown; that job now belongs to software. Kept for provenance — do not use as current method.
+
 # 執行控制（Execution Control）
 
 > 當專案一直用很多小 package 推進，使用者已經看不出大方向時，用這套。

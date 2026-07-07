@@ -1,3 +1,6 @@
+> **ARCHIVED (2026-07-08) — superseded by [edda](https://github.com/fagemx/edda).**
+> This document taught hand-maintained execution state / control planes in markdown; that job now belongs to software. Kept for provenance — do not use as current method.
+
 # 控制平面（Control Plane）
 
 > 當 `execution-state.md` 不再夠用時才加 —— 例如外部 agent 必須用一個命令回答「我們現在在哪？」，

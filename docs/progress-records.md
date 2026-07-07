@@ -22,10 +22,10 @@ No. You need the smallest set of records that preserves the judgment you want to
 
 They're listed in increasing time scale.
 
-For long-running campaigns, a sixth optional control file may be useful:
-`execution-state.md`. It sits beside state snapshot and handoff, but answers a
-different question: which large campaign is active, what is the next eligible
-unit, and what stop conditions apply. See [`execution-control.md`](execution-control.md).
+For long-running campaigns, execution state (which campaign is active, next
+eligible unit, stop conditions) belongs to running software, not markdown:
+use [edda](https://github.com/fagemx/edda). The retired hand-maintained
+method is preserved in [`archive/`](archive/).
 
 ### 1. State snapshot — "right now"
 

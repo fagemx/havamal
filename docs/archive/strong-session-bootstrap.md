@@ -1,3 +1,6 @@
+> **ARCHIVED (2026-07-08) — out of scope.**
+> Session orchestration is not havamal's job (havamal = judgment extraction, not state or session management). Kept for provenance — do not use as current method.
+
 # Strong Session Bootstrap — 判斷層開場 prompt（貼上即用）
 
 Status: draft（2026-07-02）

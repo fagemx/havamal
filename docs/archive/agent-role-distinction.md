@@ -1,3 +1,6 @@
+> **ARCHIVED (2026-07-08) — out of scope.**
+> Session orchestration is not havamal's job (havamal = judgment extraction, not state or session management). Kept for provenance — do not use as current method.
+
 # Agent-Role Distinction (proposal)
 
 Status: proposal (draft) — 2026-07-06

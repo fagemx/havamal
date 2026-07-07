@@ -1,3 +1,6 @@
+> **ARCHIVED (2026-07-08) — out of scope.**
+> Session orchestration is not havamal's job (havamal = judgment extraction, not state or session management). Kept for provenance — do not use as current method.
+
 # Triad Development — 三角開發法
 
 Status: **draft**（2026-07-02，蒸餾自一個多月期 solo 產品開發的實戰紀錄）

@@ -208,7 +208,7 @@ Add things only when you feel the absence. Typical pacing:
 - `layer-3-methods.md` — when you have a method you've validated across ≥ 2 situations.
 - `layer-4-sops.md` — when a specific procedure recurs for the 3rd time.
 - `handoff.md` — when session-to-session continuity gets messy.
-- `execution-state.md` — when a long-running campaign has many small packages and the operator cannot track the larger direction from state-snapshot alone.
+- execution state — when a long-running campaign outgrows the state snapshot, use [edda](https://github.com/fagemx/edda) (state management is software's job, not markdown's; old method in `docs/archive/`).
 - `narrative-log/` — when your long sessions contain transformations worth preserving.
 - `incubation.md` — when you keep having "might be doctrine, not sure yet" moments.
 

@@ -1,3 +1,6 @@
+> **ARCHIVED (2026-07-08) — superseded by [edda](https://github.com/fagemx/edda).**
+> This document taught hand-maintained execution state / control planes in markdown; that job now belongs to software. Kept for provenance — do not use as current method.
+
 # Lane Parallelism
 
 > Use this only after the control plane (`docs/control-plane.md`) is in

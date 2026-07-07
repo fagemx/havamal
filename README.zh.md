@@ -353,13 +353,7 @@ Assistant 說「我可以幫你封存」但沒有對應的 state 轉換發生。
 
 完整指南（各模式用哪些紀錄、決策流、反模式）：[`docs/progress-records.zh.md`](docs/progress-records.zh.md)
 
-長任務一直用小 package 推進、使用者看不出大方向時，加 execution control。看 [`docs/execution-control.zh.md`](docs/execution-control.zh.md) / English: [`docs/execution-control.md`](docs/execution-control.md)。
-
-當 markdown 執行狀態本身擠不下一個螢幕、或第二個讀者（status 命令、外部 agent、姊妹 session）需要同一份狀態時，加**機器可讀的控制平面（control plane）**。這層是一個 JSON 檔加一支薄薄的 status 命令，opt-in。
-
-看 [`docs/control-plane.zh.md`](docs/control-plane.zh.md) / English：[`docs/control-plane.md`](docs/control-plane.md)，template 在 [`templates/control-plane.json`](templates/control-plane.json) 與 [`templates/status-command.md`](templates/status-command.md)。
-
-當專案最終需要同時跑超過一條 active track 時，控制平面有 opt-in 的 **lane 並行**擴充。看 [`docs/lane-parallelism.zh.md`](docs/lane-parallelism.zh.md) / English：[`docs/lane-parallelism.md`](docs/lane-parallelism.md)。
+執行狀態、控制平面、lane 並行——**這些不是 havamal 的工作**：那是狀態管理，該交給運行中的軟體。用 [edda](https://github.com/fagemx/edda)（事實、決策、協調自動流動），havamal 只管判斷層。舊的手養 markdown 方法保留在 [`docs/archive/`](docs/archive/) 供考古，勿當現行方法。
 
 ## 維護
 

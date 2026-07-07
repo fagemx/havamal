@@ -25,7 +25,7 @@ Posture loader for <project>. Do NOT summarize this back; enter the stance.
 3. `references/layer-5-thinking-modes.md`
 4. `references/layer-6-heart-methods.md`
 
-On-demand: L2, L3, L4, failure-memory, taste-examples, apprenticeship-check, bootstrap-prompt, provenance, execution-state.
+On-demand: L2, L3, L4, failure-memory, taste-examples, apprenticeship-check, bootstrap-prompt, provenance.
 
 ## One-sentence identity
 
@@ -287,12 +287,9 @@ Refresh <project> posture. State: (1) current, (2) durable, (3) smallest safe ne
 
 ---
 
-## execution-state.md
+## execution-state
 
-```markdown
-# Execution State — <project>
-
-**Last reviewed:** YYYY-MM-DD
+Retired: execution state is software's job — point projects at edda instead of scaffolding a markdown control file. (Old template archived in the havamal repo.)
 
 ## Current position
 
@@ -364,7 +361,6 @@ Optional. Add only when a long-running campaign has outgrown state-snapshot and 
 7. L5 (2–4 thinking modes)
 8. apprenticeship-check (customize 6 questions)
 9. bootstrap-prompt (copy-paste loader)
-10. execution-state (optional when long-running package queue exists)
 11. L3 (optional at v0)
 12. L4 (optional at v0)
 13. provenance (optional at v0, required by v1)

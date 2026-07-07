@@ -1,3 +1,6 @@
+> **ARCHIVED (2026-07-08) — out of scope.**
+> Session orchestration is not havamal's job (havamal = judgment extraction, not state or session management). Kept for provenance — do not use as current method.
+
 # Strong Session Protocol — 最強模型 session 的使用守則與判斷力外化
 
 Status: **draft**（2026-07-02，由一次最強推理級模型 session 親筆留下）

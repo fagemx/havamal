@@ -20,7 +20,6 @@ On-demand references:
   - references/bootstrap-prompt.md
   - references/provenance.md
   - references/incubation.md
-  - references/execution-state.md
 
 Team-only (solo projects can delete):
   - references/governance.md
@@ -68,7 +67,8 @@ Then, on demand as the work requires:
 - [`references/bootstrap-prompt.md`](references/bootstrap-prompt.md) — copy-paste agent loader
 - [`references/provenance.md`](references/provenance.md) — where the entries came from
 - [`references/incubation.md`](references/incubation.md) — candidate doctrine not yet promoted (the "not sure yet" parking lot)
-- [`references/execution-state.md`](references/execution-state.md) — optional live control file for long-running campaigns
+
+Execution state (live campaign/queue tracking) is not a doctrine file — use [edda](https://github.com/fagemx/edda); the retired markdown method is archived in the havamal repo.
 
 **Team mode only** (solo projects can delete these):
 
@@ -99,8 +99,7 @@ Full model: see [`docs/six-layer-model.md`](../../docs/six-layer-model.md) in th
 
 1. Read state-snapshot
 2. Read L1, L5, L6
-3. If `references/execution-state.md` is active and non-empty, read it before picking work
-4. Run the apprenticeship check (see `references/apprenticeship-check.md`) if this is a fresh session or if the doctrine has changed materially
+3. Run the apprenticeship check (see `references/apprenticeship-check.md`) if this is a fresh session or if the doctrine has changed materially
 
 ### Before writing a plan
 
@@ -137,7 +136,6 @@ Full model: see [`docs/six-layer-model.md`](../../docs/six-layer-model.md) in th
 - **L6**: one entry per real scar; never manufactured
 - **failure-memory**: add as traps become visible
 - **taste-examples**: add when a "no, like this" happens
-- **execution-state**: update when a long-running campaign changes focus, queue, friction, or verification baseline
 
 If nothing in the doctrine has changed in a month and the project is active, the doctrine is probably stale.
 
