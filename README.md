@@ -308,6 +308,16 @@ node bin/havamal.mjs pack  docs/skills/<project>-doctrine --out .havamal-pack.md
 
 Try both against the flagship example: `node bin/havamal.mjs check examples/wushantou-foundry/references`
 
+### edda integration
+
+If your sessions run [edda](https://github.com/fagemx/edda), the two compose as their names suggest — edda carries the sagas (facts, decisions, coordination), havamal carries the maxims (judgment):
+
+```bash
+havamal pack docs/skills/<project>-doctrine --out .havamal-pack.md
+```
+
+edda's SessionStart hook auto-injects `.havamal-pack.md` as a `## Doctrine (judgment layer)` section (override the path with `EDDA_DOCTRINE_PATH`, cap size with `EDDA_DOCTRINE_BUDGET_CHARS`). Division of labor: **facts flow automatically; judgment enters curated** — edda never generates judgment itself, because machine-extracted judgment without sign-off is noise. Regenerate the pack when the doctrine changes (a pre-commit hook or CI step works well); commit it or gitignore it — both are valid, committed packs travel with clones.
+
 ## Everyday Use
 
 You don't "manage doctrine" every day. Most of the time you just tell your agent:
