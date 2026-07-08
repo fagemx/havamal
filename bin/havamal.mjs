@@ -30,6 +30,23 @@ const PLACEHOLDER_PATTERNS = [
   /^\s*\.\.\.\s*$/m,
 ];
 
+// Role projections of the single doctrine body. One source, many slices —
+// profiles never fork files; they select sections (and honor entry markers).
+const PROFILES = {
+  executor: ["state", "scars", "l6"],
+  reviewer: ["l1", "taste", "scars"],
+};
+
+// Entry-level opt-in scope: `<!-- profile: reviewer -->` (comma list allowed)
+// on the first non-empty line after a heading scopes that entry.
+const PROFILE_MARKER = /^<!--\s*profile:\s*([a-z0-9_\s,-]+?)\s*-->$/i;
+
+function parseMarkerRoles(line) {
+  const hit = line.trim().match(PROFILE_MARKER);
+  if (!hit) return null;
+  return hit[1].split(",").map((r) => r.trim().toLowerCase()).filter(Boolean);
+}
+
 function resolveDoctrineDir(dir) {
   const refs = join(dir, "references");
   return existsSync(join(refs, "state-snapshot.md")) ? refs : dir;
@@ -88,6 +105,22 @@ function checkCommand(dir) {
     }
   }
 
+  // Profile markers must name known roles — a typo'd marker silently hides
+  // an entry from every slice, so an unknown role is doctrine debt (FAIL).
+  for (const name of [...MVD_FILES, ...OPTIONAL_FILES]) {
+    const path = join(root, name);
+    if (!existsSync(path)) continue;
+    for (const line of readFileSync(path, "utf8").split(/\r?\n/)) {
+      const roles = parseMarkerRoles(line);
+      if (!roles) continue;
+      for (const role of roles) {
+        if (!PROFILES[role]) {
+          problems.push(`unknown profile '${role}' in ${name} — valid: ${Object.keys(PROFILES).join(", ")}`);
+        }
+      }
+    }
+  }
+
   const verdict = problems.length === 0 ? "PASS" : "FAIL";
   console.log(`havamal check — ${root}`);
   console.log(`verdict: ${verdict} (${problems.length} problems, ${warnings.length} notes)`);
@@ -96,16 +129,28 @@ function checkCommand(dir) {
   process.exit(problems.length === 0 ? 0 : 1);
 }
 
-function extractHeadingsAndLeads(body, { leadLines = 1 } = {}) {
+function extractHeadingsAndLeads(body, { leadLines = 1, profile = null } = {}) {
   const out = [];
   const lines = body.split(/\r?\n/);
   for (let i = 0; i < lines.length; i++) {
     if (/^#{2,3}\s/.test(lines[i])) {
+      // Entry scope: a profile marker on the first non-empty line after the
+      // heading. Marker lines never appear in output, in any projection.
+      let entryRoles = null;
+      for (let j = i + 1; j < lines.length; j++) {
+        const line = lines[j].trim();
+        if (line.length === 0) continue;
+        entryRoles = parseMarkerRoles(line);
+        break;
+      }
+      if (profile && entryRoles && !entryRoles.includes(profile)) continue;
+
       out.push(lines[i]);
       let taken = 0;
       for (let j = i + 1; j < lines.length && taken < leadLines; j++) {
         const line = lines[j].trim();
         if (/^#{1,3}\s/.test(line)) break;
+        if (parseMarkerRoles(line)) continue;
         if (line.length > 0) {
           out.push(lines[j]);
           taken++;
@@ -120,36 +165,43 @@ function packCommand(dir, args) {
   const root = resolveDoctrineDir(dir);
   const maxBytes = Number(argValue(args, "--max-bytes")) || 6000;
   const outFile = argValue(args, "--out");
+  const profile = argValue(args, "--profile") ?? null;
+  if (profile && !PROFILES[profile]) {
+    console.error(`unknown profile '${profile}' — valid: ${Object.keys(PROFILES).join(", ")}. Run without --profile for the full pack.`);
+    process.exit(1);
+  }
+  const want = (key) => !profile || PROFILES[profile].includes(key);
   const sections = [];
 
   const snapshot = join(root, "state-snapshot.md");
-  if (existsSync(snapshot)) {
+  if (want("state") && existsSync(snapshot)) {
     const body = readFileSync(snapshot, "utf8");
     sections.push("## STATE (now)\n" + body.split(/\r?\n/).slice(0, 30).join("\n").trim());
   }
 
   const ideology = join(root, "layer-1-ideology.md");
-  if (existsSync(ideology)) {
-    sections.push("## L1 — MUST STAY TRUE\n" + extractHeadingsAndLeads(readFileSync(ideology, "utf8")));
+  if (want("l1") && existsSync(ideology)) {
+    sections.push("## L1 — MUST STAY TRUE\n" + extractHeadingsAndLeads(readFileSync(ideology, "utf8"), { profile }));
   }
 
   const failures = join(root, "failure-memory.md");
-  if (existsSync(failures)) {
-    sections.push("## SCARS — DO NOT REPEAT\n" + extractHeadingsAndLeads(readFileSync(failures, "utf8"), { leadLines: 2 }));
+  if (want("scars") && existsSync(failures)) {
+    sections.push("## SCARS — DO NOT REPEAT\n" + extractHeadingsAndLeads(readFileSync(failures, "utf8"), { leadLines: 2, profile }));
   }
 
-  for (const [name, label] of [
-    ["layer-6-heart-methods.md", "L6 — PAID LESSONS"],
-    ["taste-examples.md", "TASTE (good vs bad)"],
+  for (const [key, name, label] of [
+    ["l6", "layer-6-heart-methods.md", "L6 — PAID LESSONS"],
+    ["taste", "taste-examples.md", "TASTE (good vs bad)"],
   ]) {
     const path = join(root, name);
-    if (existsSync(path)) {
-      sections.push(`## ${label}\n` + extractHeadingsAndLeads(readFileSync(path, "utf8")));
+    if (want(key) && existsSync(path)) {
+      sections.push(`## ${label}\n` + extractHeadingsAndLeads(readFileSync(path, "utf8"), { profile }));
     }
   }
 
+  const headerTag = profile ? ` · profile: ${profile}` : "";
   let pack = [
-    `<!-- havamal hot pack · generated ${new Date().toISOString()} from ${root} -->`,
+    `<!-- havamal hot pack${headerTag} · generated ${new Date().toISOString()} from ${root} -->`,
     "<!-- Inject at session start. This is the compressed working set; read the full doctrine before big plans. -->",
     "",
     ...sections,
@@ -177,7 +229,7 @@ function argValue(args, flag) {
 const [command, dir, ...rest] = process.argv.slice(2);
 if (!command || !dir || !existsSync(dir)) {
   console.log("usage: havamal check <doctrine-dir>");
-  console.log("       havamal pack  <doctrine-dir> [--out <file>] [--max-bytes <n>]");
+  console.log("       havamal pack  <doctrine-dir> [--out <file>] [--max-bytes <n>] [--profile executor|reviewer]");
   process.exit(command ? 1 : 0);
 }
 if (command === "check") checkCommand(dir);

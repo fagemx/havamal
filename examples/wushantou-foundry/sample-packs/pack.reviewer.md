@@ -1,0 +1,39 @@
+<!-- havamal hot pack · profile: reviewer · generated 2026-07-08T03:09:30.187Z from examples/wushantou-foundry/references -->
+
+<!-- Inject at session start. This is the compressed working set; read the full doctrine before big plans. -->
+
+
+
+## L1 — MUST STAY TRUE
+## 1. Claims never close work
+A worker's self-report of progress is a **claim**, not progress. Only receipts count: declared verify commands, run by the gate, at acceptance time. "Ask the ledger, never the worker." Applies equally to LLM agents, humans, drones, and subcontractors — the acceptance layer is labor-agnostic.
+## 2. Hard-stops live in executable checks, never prose
+Agents systematically soften prohibitions when transcribing them: "must never approve" becomes "check the permit documents." This is not noise — it reproduced across independent runs. Any rule that must not bend gets a script the gate can run; prose is for context only.
+## 3. Prose rules decay; mechanisms hold
+A written rule that relies on being remembered **will be violated — including by its own author, on the same day it was written**. When the same mistake hits twice, stop improving the wording and build the mechanism (CI scan, lint, gate) that makes the mistake impossible.
+## 4. Signal travels, goods stay (zero egress by default)
+Chat channels carry pointers, summaries, and bells — never the documents themselves. The client's files never leave the client's machine. Entry points follow the compliance domain of the *document*, not the convenience of the person.
+## 5. The kernel is criteria-agnostic
+Industry knowledge (legal red lines, shot lists, audit rules) lives in **criteria packs** — data files the owner can walk away with. The engine must not know or care which industry it is verifying. A card reader owns the slot, never the cards.
+
+## SCARS — DO NOT REPEAT
+### FM-1: The all-green report over empty goods ("FIFA incident")
+- **Temptation:** Trust the executing agent's completion report — it was detailed, confident, and all green.
+- **How it failed:** The report said everything passed while the actual data file contained `matches: []`. Empty goods, perfect paperwork. Discovered only when a human opened the artifact.
+### FM-2: Criteria softening in transcription
+- **Temptation:** Let the agent restate the review criteria in its own words — it reads more naturally.
+- **How it failed:** "Combustible-dust activities must never be approved" (an absolute legal prohibition) became "check whether a permit document is attached" — twice, in two independent runs. A hard stop silently downgraded into a paperwork check. In a high-liability domain this is the exact error that gets a professional sued.
+### FM-3: Textual self-reference (the rule its own author broke)
+- **Temptation:** Mention an artifact path in a ledger's descriptive text — it's the most natural way to name a file.
+- **How it failed:** The audit regex treated the prose mention as a real reference to a file that doesn't exist in fresh checkouts → CI red. Five hits in three days, one of them by the very author of the freshly written "how to avoid this" note, on the same day.
+### FM-4: Mis-warehoused goods, wrong-warehouse audit
+- **Temptation:** Audit an agent's claim by searching where the goods *should* be.
+- **How it failed:** A wiring bug landed artifacts in the engine repo's workspace instead of the client workspace. The auditor searched only the client workspace, found nothing, and nearly recorded an honest agent as having fabricated its claim. Two independent mistakes compounding into a false verdict.
+
+## TASTE (good vs bad)
+### 1. Reporting progress
+**Good:**
+### 2. Giving the user visibility
+**Good:**
+### 3. Handling a rule that must not bend
+**Good:**

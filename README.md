@@ -303,10 +303,27 @@ node bin/havamal.mjs check docs/skills/<project>-doctrine   # doctrine-debt lint
 node bin/havamal.mjs pack  docs/skills/<project>-doctrine --out .havamal-pack.md   # compressed hot pack for session-start injection
 ```
 
-- **`check`** exits non-zero when MVD files are missing or filled with placeholder text — wire it into CI so doctrine debt blocks merges instead of accumulating.
+- **`check`** exits non-zero when MVD files are missing or filled with placeholder text — wire it into CI so doctrine debt blocks merges instead of accumulating. It also rejects unknown role names in profile markers (a typo'd marker would silently hide an entry from every slice).
 - **`pack`** exists because working agents consume compressed context, not full prose. Generate the pack, reference *it* from `CLAUDE.md` / `AGENTS.md`, and keep the full doctrine as cold storage for deep dives and disputes.
 
-Try both against the flagship example: `node bin/havamal.mjs check examples/wushantou-foundry/references`
+### Role profiles (one source, many slices)
+
+Different roles need different judgment: an implementer needs the current state and the scars; a reviewer needs the ideology and the taste examples. `--profile` projects the **same doctrine body** into a role-shaped slice — profiles never fork files:
+
+```bash
+node bin/havamal.mjs pack docs/skills/<project>-doctrine --profile executor   # STATE + SCARS + L6
+node bin/havamal.mjs pack docs/skills/<project>-doctrine --profile reviewer   # L1 + TASTE + SCARS
+```
+
+The slice header carries `profile: <name>` so downstream assemblers (e.g. a dispatch layer injecting doctrine into a kickoff prompt) can verify what they got. To scope a single entry to one role, put a marker on the first line after its heading — unmarked entries appear in every slice, and the full pack (no `--profile`) always includes everything:
+
+```markdown
+### FM-7: reviewers keep merging their own fixes
+<!-- profile: reviewer -->
+- **How it failed:** ...
+```
+
+Try it against the flagship example: `node bin/havamal.mjs check examples/wushantou-foundry/references`, then `node bin/havamal.mjs pack examples/wushantou-foundry/references --profile executor` (sample outputs: [`examples/wushantou-foundry/sample-packs/`](examples/wushantou-foundry/sample-packs/)). Tests: `npm test`.
 
 ### edda integration
 

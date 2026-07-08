@@ -6,6 +6,9 @@
   "bin": {
     "havamal": "./bin/havamal.mjs"
   },
+  "scripts": {
+    "test": "node --test test/profile.test.mjs"
+  },
   "files": [
     "bin",
     "templates",
