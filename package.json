@@ -7,7 +7,7 @@
     "havamal": "./bin/havamal.mjs"
   },
   "scripts": {
-    "test": "node --test test/profile.test.mjs"
+    "test": "node --test test/profile.test.mjs test/version-stamp.test.mjs"
   },
   "files": [
     "bin",

@@ -303,7 +303,7 @@ node bin/havamal.mjs check docs/skills/<project>-doctrine   # doctrine-debt lint
 node bin/havamal.mjs pack  docs/skills/<project>-doctrine --out .havamal-pack.md   # compressed hot pack for session-start injection
 ```
 
-- **`check`** exits non-zero when MVD files are missing or filled with placeholder text — wire it into CI so doctrine debt blocks merges instead of accumulating. It also rejects unknown role names in profile markers (a typo'd marker would silently hide an entry from every slice).
+- **`check`** exits non-zero when MVD files are missing or filled with placeholder text — wire it into CI so doctrine debt blocks merges instead of accumulating. It also rejects unknown role names in profile markers (a typo'd marker would silently hide an entry from every slice), and surfaces the doctrine version when present (see **Doctrine version footer** below).
 - **`pack`** exists because working agents consume compressed context, not full prose. Generate the pack, reference *it* from `CLAUDE.md` / `AGENTS.md`, and keep the full doctrine as cold storage for deep dives and disputes.
 
 ### Role profiles (one source, many slices)
@@ -324,6 +324,21 @@ The slice header carries `profile: <name>` so downstream assemblers (e.g. a disp
 ```
 
 Try it against the flagship example: `node bin/havamal.mjs check examples/wushantou-foundry/references`, then `node bin/havamal.mjs pack examples/wushantou-foundry/references --profile executor` (sample outputs: [`examples/wushantou-foundry/sample-packs/`](examples/wushantou-foundry/sample-packs/)). Tests: `npm test`.
+
+### Doctrine version footer
+
+Doctrine that ships gets promoted, amended, and (rarely) reframed. Leave a visible trace of each of those human sign-offs by ending one of your doctrine files with:
+
+```markdown
+<!-- havamal:version -->
+Version: 0.5.0 | Ratified: 2026-06-15 | Last Amended: 2026-07-08
+```
+
+- **PATCH** — wording fix, no new promise
+- **MINOR** — a new scar, taste example, or L-layer entry
+- **MAJOR** — an incompatible reframe (rare; older packs may need re-injection)
+
+When present, `check` echoes the current version, and every `pack` header carries it (e.g. `· version: 0.5.0`). Absent or malformed footers are surfaced as **notes**, never failures — the field is opt-in and always backward compatible.
 
 ### edda integration
 

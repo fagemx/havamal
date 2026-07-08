@@ -1,4 +1,4 @@
-<!-- havamal hot pack · profile: executor · generated 2026-07-08T03:58:15.431Z from examples/wushantou-foundry/references -->
+<!-- havamal hot pack · profile: executor · version: 0.5.0 · generated 2026-07-08T06:20:05.161Z from examples/wushantou-foundry/references -->
 
 <!-- Inject at session start. This is the compressed working set; read the full doctrine before big plans. -->
 

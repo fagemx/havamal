@@ -36,3 +36,8 @@ Four entries. Format: temptation → how it failed → detection → correct mov
 - **How it failed:** Three consecutive hook invocations died silently (exit 0, zero effect) because a swallow-all resilience design hid a JSON escape error; the runner kept re-firing variations instead of opening the debug face. Same signature family as the F4 spawn-DOA and the headless-drill r3 UNOBSERVABLE hang: consecutive silent failures, zero new information per retry.
 - **Detection:** Two failures of the same step with no new diagnostic output between them. (Surfaced by the postmortem candidate lane — trigger `session_failures`, key 0f3688823609, flywheel drill 1 — and human-signed 2026-07-08.)
 - **Correct move:** After the second silent failure, stop retrying: find the component's debug switch (e.g. `EDDA_DEBUG=1`), shrink the step until it speaks, then proceed. Swallow-error designs are correct for production hooks and hostile to blind retries — the debug face is the contract.
+
+---
+
+<!-- havamal:version -->
+Version: 0.5.0 | Ratified: 2026-06-15 | Last Amended: 2026-07-08

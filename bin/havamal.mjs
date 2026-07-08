@@ -47,6 +47,78 @@ function parseMarkerRoles(line) {
   return hit[1].split(",").map((r) => r.trim().toLowerCase()).filter(Boolean);
 }
 
+// Doctrine version footer (havamal q330 HAVAMAL-HYGIENE1) — the visible trace
+// of "升格永遠人簽". Format: two consecutive lines,
+//   <!-- havamal:version -->
+//   Version: X.Y.Z | Ratified: YYYY-MM-DD | Last Amended: YYYY-MM-DD
+// Convention: MAJOR = incompatible reframe · MINOR = new scar/taste/L*
+// entry · PATCH = wording fix. Missing footer stays valid (backward compat).
+const VERSION_MARKER = "<!-- havamal:version -->";
+const VERSION_RE = /^Version:\s*(\d+\.\d+\.\d+)\s*\|\s*Ratified:\s*(\d{4}-\d{2}-\d{2})\s*\|\s*Last Amended:\s*(\d{4}-\d{2}-\d{2})\s*$/;
+
+/**
+ * Parse a version footer from the end of a doctrine file body.
+ * Returns {version, ratified, lastAmended} or null (missing OR malformed —
+ * caller distinguishes via `hasVersionMarker` when needed).
+ */
+export function parseVersionFooter(body) {
+  if (typeof body !== "string") return null;
+  const idx = body.lastIndexOf(VERSION_MARKER);
+  if (idx < 0) return null;
+  const after = body.slice(idx + VERSION_MARKER.length);
+  const line = after.split(/\r?\n/).map((l) => l.trim()).find((l) => l.length > 0);
+  if (!line) return null;
+  const m = VERSION_RE.exec(line);
+  if (!m) return null;
+  return { version: m[1], ratified: m[2], lastAmended: m[3] };
+}
+
+/** True when the file has the marker, whether or not the version line parses. */
+function hasVersionMarker(body) {
+  return typeof body === "string" && body.includes(VERSION_MARKER);
+}
+
+export function renderVersionFooter({ version, ratified, lastAmended }) {
+  return `${VERSION_MARKER}\nVersion: ${version} | Ratified: ${ratified} | Last Amended: ${lastAmended}\n`;
+}
+
+/**
+ * Scan the standard MVD+optional files in a doctrine dir; return the highest
+ * (semver-max) parseable version + malformed-marker file list. Deterministic.
+ */
+function scanVersionFooters(root) {
+  const files = [...MVD_FILES, ...OPTIONAL_FILES];
+  const parsed = [];
+  const malformed = [];
+  const missing = [];
+  for (const name of files) {
+    const path = join(root, name);
+    if (!existsSync(path)) continue;
+    const body = readFileSync(path, "utf8");
+    if (!hasVersionMarker(body)) {
+      missing.push(name);
+      continue;
+    }
+    const p = parseVersionFooter(body);
+    if (p) parsed.push({ file: name, ...p });
+    else malformed.push(name);
+  }
+  let highest = null;
+  for (const p of parsed) {
+    if (!highest || compareSemver(p.version, highest.version) > 0) highest = p;
+  }
+  return { parsed, malformed, missing, highest };
+}
+
+function compareSemver(a, b) {
+  const pa = a.split(".").map((n) => Number(n) || 0);
+  const pb = b.split(".").map((n) => Number(n) || 0);
+  for (let i = 0; i < 3; i++) {
+    if (pa[i] !== pb[i]) return pa[i] - pb[i];
+  }
+  return 0;
+}
+
 function resolveDoctrineDir(dir) {
   const refs = join(dir, "references");
   return existsSync(join(refs, "state-snapshot.md")) ? refs : dir;
@@ -121,9 +193,24 @@ function checkCommand(dir) {
     }
   }
 
+  // HAVAMAL-HYGIENE1 (q330): doctrine version footer trace of "升格永遠人簽".
+  // Missing/malformed = note (backward compat: never FAIL). Present = quiet PASS.
+  const versionScan = scanVersionFooters(root);
+  if (versionScan.malformed.length > 0) {
+    warnings.push(`malformed version footer in: ${versionScan.malformed.join(", ")}`);
+  }
+  if (versionScan.parsed.length === 0 && versionScan.malformed.length === 0) {
+    warnings.push(
+      "version footer absent from all doctrine files — consider adding `<!-- havamal:version -->` + `Version: X.Y.Z | Ratified: DATE | Last Amended: DATE`",
+    );
+  }
+
   const verdict = problems.length === 0 ? "PASS" : "FAIL";
   console.log(`havamal check — ${root}`);
   console.log(`verdict: ${verdict} (${problems.length} problems, ${warnings.length} notes)`);
+  if (versionScan.highest) {
+    console.log(`  doctrine version: ${versionScan.highest.version} (from ${versionScan.highest.file})`);
+  }
   for (const problem of problems) console.log(`  ✗ ${problem}`);
   for (const warning of warnings) console.log(`  · ${warning}`);
   process.exit(problems.length === 0 ? 0 : 1);
@@ -199,9 +286,12 @@ function packCommand(dir, args) {
     }
   }
 
+  // HAVAMAL-HYGIENE1 q330: surface doctrine version in pack header when present
+  const versionScan = scanVersionFooters(root);
+  const versionTag = versionScan.highest ? ` · version: ${versionScan.highest.version}` : "";
   const headerTag = profile ? ` · profile: ${profile}` : "";
   let pack = [
-    `<!-- havamal hot pack${headerTag} · generated ${new Date().toISOString()} from ${root} -->`,
+    `<!-- havamal hot pack${headerTag}${versionTag} · generated ${new Date().toISOString()} from ${root} -->`,
     "<!-- Inject at session start. This is the compressed working set; read the full doctrine before big plans. -->",
     "",
     ...sections,
