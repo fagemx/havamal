@@ -29,3 +29,10 @@ Four entries. Format: temptation → how it failed → detection → correct mov
 - **How it failed:** A wiring bug landed artifacts in the engine repo's workspace instead of the client workspace. The auditor searched only the client workspace, found nothing, and nearly recorded an honest agent as having fabricated its claim. Two independent mistakes compounding into a false verdict.
 - **Detection:** Any audit that does not declare its search universe ("I searched X and Y, not Z").
 - **Correct move:** Audits declare coverage (what was searched, what wasn't); the system provides a machine-readable placement report so "where are the goods" has one command as its answer.
+
+### FM-5: Retrying into a silent wall (machine-surfaced)
+
+- **Temptation:** When a step fails silently, fire it again with a small tweak — surely the next variation lands.
+- **How it failed:** Three consecutive hook invocations died silently (exit 0, zero effect) because a swallow-all resilience design hid a JSON escape error; the runner kept re-firing variations instead of opening the debug face. Same signature family as the F4 spawn-DOA and the headless-drill r3 UNOBSERVABLE hang: consecutive silent failures, zero new information per retry.
+- **Detection:** Two failures of the same step with no new diagnostic output between them. (Surfaced by the postmortem candidate lane — trigger `session_failures`, key 0f3688823609, flywheel drill 1 — and human-signed 2026-07-08.)
+- **Correct move:** After the second silent failure, stop retrying: find the component's debug switch (e.g. `EDDA_DEBUG=1`), shrink the step until it speaks, then proceed. Swallow-error designs are correct for production hooks and hostile to blind retries — the debug face is the contract.

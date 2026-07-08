@@ -1,4 +1,4 @@
-<!-- havamal hot pack · profile: executor · generated 2026-07-08T03:09:30.080Z from examples/wushantou-foundry/references -->
+<!-- havamal hot pack · profile: executor · generated 2026-07-08T03:58:15.431Z from examples/wushantou-foundry/references -->
 
 <!-- Inject at session start. This is the compressed working set; read the full doctrine before big plans. -->
 
@@ -28,3 +28,6 @@
 ### FM-4: Mis-warehoused goods, wrong-warehouse audit
 - **Temptation:** Audit an agent's claim by searching where the goods *should* be.
 - **How it failed:** A wiring bug landed artifacts in the engine repo's workspace instead of the client workspace. The auditor searched only the client workspace, found nothing, and nearly recorded an honest agent as having fabricated its claim. Two independent mistakes compounding into a false verdict.
+### FM-5: Retrying into a silent wall (machine-surfaced)
+- **Temptation:** When a step fails silently, fire it again with a small tweak — surely the next variation lands.
+- **How it failed:** Three consecutive hook invocations died silently (exit 0, zero effect) because a swallow-all resilience design hid a JSON escape error; the runner kept re-firing variations instead of opening the debug face. Same signature family as the F4 spawn-DOA and the headless-drill r3 UNOBSERVABLE hang: consecutive silent failures, zero new information per retry.
