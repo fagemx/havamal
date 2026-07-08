@@ -310,6 +310,12 @@ Try both against the flagship example: `node bin/havamal.mjs check examples/wush
 
 ### edda integration
 
+<details>
+<summary><strong>Do I need edda too?</strong></summary>
+
+Short answer: **no — havamal is useful on its own**. Its contract is a plain markdown file that any harness can read: Claude Code, Codex, Cursor, Gemini CLI — reference the pack from `CLAUDE.md` / `AGENTS.md` and every new session picks it up. Adding [edda](https://github.com/fagemx/edda) buys you *auto-injection* (edda's SessionStart hook loads the pack for you) and separates the two layers cleanly: facts flow through edda, judgment enters through havamal. Use either alone; they compose when both are present.
+</details>
+
 If your sessions run [edda](https://github.com/fagemx/edda), the two compose as their names suggest — edda carries the sagas (facts, decisions, coordination), havamal carries the maxims (judgment):
 
 ```bash
