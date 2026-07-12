@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const CLI = join(repoRoot, "bin", "havamal.mjs");
-const EXAMPLE = join(repoRoot, "examples", "wushantou-foundry", "references");
+const EXAMPLE = join(repoRoot, "examples", "wusanto-foundry", "references");
 
 function run(args, opts = {}) {
   try {

@@ -1,6 +1,6 @@
-# Flagship example: Wushantou (AI Delivery Foundry)
+# Flagship example: Wusanto (AI Delivery Foundry)
 
-This is a **real doctrine distilled from a real project** — [fagemx/wushantou](https://github.com/fagemx/wushantou), a verification layer for AI-produced work (780+ commits, governance ledger in-repo). Every scar below has a public provenance trail; nothing here is invented for the template.
+This is a **real doctrine distilled from a real project** — [fagemx/wusanto](https://github.com/fagemx/wusanto), a verification layer for AI-produced work (780+ commits, governance ledger in-repo). Every scar below has a public provenance trail; nothing here is invented for the template.
 
 It is the answer to the fair question every methodology repo should face: *"do the authors use this themselves?"* Yes — this doctrine was extracted from the project's own decision records and friction ledger, and the failure memories below each cost real debugging time before they became rules.
 
@@ -20,6 +20,6 @@ references/
 Try the machine face on it:
 
 ```bash
-node ../../bin/havamal.mjs check examples/wushantou-foundry/references
-node ../../bin/havamal.mjs pack  examples/wushantou-foundry/references
+node ../../bin/havamal.mjs check examples/wusanto-foundry/references
+node ../../bin/havamal.mjs pack  examples/wusanto-foundry/references
 ```

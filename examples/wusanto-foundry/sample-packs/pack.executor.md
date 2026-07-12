@@ -1,20 +1,19 @@
-<!-- havamal hot pack · profile: reviewer · version: 0.5.0 · generated 2026-07-08T06:20:05.275Z from examples/wushantou-foundry/references -->
+<!-- havamal hot pack · profile: executor · version: 0.5.0 · generated 2026-07-12T02:52:12.029Z from examples/wusanto-foundry/references -->
 
 <!-- Inject at session start. This is the compressed working set; read the full doctrine before big plans. -->
 
 
 
-## L1 — MUST STAY TRUE
-## 1. Claims never close work
-A worker's self-report of progress is a **claim**, not progress. Only receipts count: declared verify commands, run by the gate, at acceptance time. "Ask the ledger, never the worker." Applies equally to LLM agents, humans, drones, and subcontractors — the acceptance layer is labor-agnostic.
-## 2. Hard-stops live in executable checks, never prose
-Agents systematically soften prohibitions when transcribing them: "must never approve" becomes "check the permit documents." This is not noise — it reproduced across independent runs. Any rule that must not bend gets a script the gate can run; prose is for context only.
-## 3. Prose rules decay; mechanisms hold
-A written rule that relies on being remembered **will be violated — including by its own author, on the same day it was written**. When the same mistake hits twice, stop improving the wording and build the mechanism (CI scan, lint, gate) that makes the mistake impossible.
-## 4. Signal travels, goods stay (zero egress by default)
-Chat channels carry pointers, summaries, and bells — never the documents themselves. The client's files never leave the client's machine. Entry points follow the compliance domain of the *document*, not the convenience of the person.
-## 5. The kernel is criteria-agnostic
-Industry knowledge (legal red lines, shot lists, audit rules) lives in **criteria packs** — data files the owner can walk away with. The engine must not know or care which industry it is verifying. A card reader owns the slot, never the cards.
+## STATE (now)
+# State Snapshot — 2026-07-08
+
+> L2 decays by design. If this is more than a few weeks old, trust the repo's own control ledger over this file.
+
+- **Phase:** pre-launch. The verification kernel (intake → criteria freeze → gates → receipts → sign-off) is shipped and self-hosting; the project governs itself through its own control ledger (`docs/product/mission-runtime-control.json`).
+- **Current push:** profession drills (lawyer / photographer / novelist scenarios) to battle-test onboarding before recruiting non-developer design partners; friction from each drill feeds the queue.
+- **Recently landed:** workspace targeting fix, connect completeness, verify placement report, F9 audit guards, coverage-receipt schema draft, criteria-pack container spec.
+- **Big picture:** drills → design partners → industry criteria packs (design-first: packs are extracted from real adoptions, never written in advance).
+- **Known tensions:** rails engagement depends on skill installation (being fixed); interview axis of intake still untested interactively.
 
 ## SCARS — DO NOT REPEAT
 ### FM-1: The all-green report over empty goods ("FIFA incident")
@@ -32,11 +31,3 @@ Industry knowledge (legal red lines, shot lists, audit rules) lives in **criteri
 ### FM-5: Retrying into a silent wall (machine-surfaced)
 - **Temptation:** When a step fails silently, fire it again with a small tweak — surely the next variation lands.
 - **How it failed:** Three consecutive hook invocations died silently (exit 0, zero effect) because a swallow-all resilience design hid a JSON escape error; the runner kept re-firing variations instead of opening the debug face. Same signature family as the F4 spawn-DOA and the headless-drill r3 UNOBSERVABLE hang: consecutive silent failures, zero new information per retry.
-
-## TASTE (good vs bad)
-### 1. Reporting progress
-**Good:**
-### 2. Giving the user visibility
-**Good:**
-### 3. Handling a rule that must not bend
-**Good:**

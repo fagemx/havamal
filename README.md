@@ -323,7 +323,7 @@ The slice header carries `profile: <name>` so downstream assemblers (e.g. a disp
 - **How it failed:** ...
 ```
 
-Try it against the flagship example: `node bin/havamal.mjs check examples/wushantou-foundry/references`, then `node bin/havamal.mjs pack examples/wushantou-foundry/references --profile executor` (sample outputs: [`examples/wushantou-foundry/sample-packs/`](examples/wushantou-foundry/sample-packs/)). Tests: `npm test`.
+Try it against the flagship example: `node bin/havamal.mjs check examples/wusanto-foundry/references`, then `node bin/havamal.mjs pack examples/wusanto-foundry/references --profile executor` (sample outputs: [`examples/wusanto-foundry/sample-packs/`](examples/wusanto-foundry/sample-packs/)). Tests: `npm test`.
 
 ### Doctrine version footer
 
@@ -510,7 +510,7 @@ Full guide + readiness rubric + three creation modes (lightweight / full / recov
 
 See [`examples/`](examples/):
 
-- [`wushantou-foundry/`](examples/wushantou-foundry/) — **flagship: a real doctrine from a real public project**, every scar with provenance (start here)
+- [`wusanto-foundry/`](examples/wusanto-foundry/) — **flagship: a real doctrine from a real public project**, every scar with provenance (start here)
 - [`software-project/`](examples/software-project/) — a fully-fleshed skeleton for a typical software product
 - [`trading-agent/`](examples/trading-agent/) — outline for a quant / trading-agent project
 - [`ai-short-drama-factory/`](examples/ai-short-drama-factory/) — outline for an AI-content pipeline

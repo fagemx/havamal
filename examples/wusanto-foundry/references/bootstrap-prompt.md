@@ -14,5 +14,5 @@ Rules of engagement: claims never close work; hard-stops need executable checks;
 For hot-path injection (compressed, session-start):
 
 ```bash
-node bin/havamal.mjs pack examples/wushantou-foundry/references --out .havamal-pack.md
+node bin/havamal.mjs pack examples/wusanto-foundry/references --out .havamal-pack.md
 ```

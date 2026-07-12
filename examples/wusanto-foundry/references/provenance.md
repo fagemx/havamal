@@ -1,6 +1,6 @@
 # Provenance — where every entry came from
 
-Source project: [fagemx/wushantou](https://github.com/fagemx/wushantou) — governance ledger lives in-repo (`docs/product/mission-runtime-control.json`: queue, friction entries, decision records) plus `docs/architecture/incubation/` (signed decision materials) and `docs/architecture/evidence/` (evidence packages). Names below are traceable there.
+Source project: [fagemx/wusanto](https://github.com/fagemx/wusanto) — governance ledger lives in-repo (`docs/product/mission-runtime-control.json`: queue, friction entries, decision records) plus `docs/architecture/incubation/` (signed decision materials) and `docs/architecture/evidence/` (evidence packages). Names below are traceable there.
 
 | Entry | Origin |
 |---|---|
